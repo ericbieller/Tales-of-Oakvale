@@ -29,6 +29,7 @@ class BetaController < ApplicationController
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @betum }
+      format.js
     end
   end
 
@@ -49,6 +50,7 @@ class BetaController < ApplicationController
       else
         format.html { render action: "new" }
         format.json { render json: @betum.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end

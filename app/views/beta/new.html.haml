@@ -4,16 +4,17 @@
 #wrapper
   #signup
     %h1 What is Tales of Oakvale?
-    %p
-      Tales of Oakvale is a text based MMORPG which puts the players in control of the story line. We're basically taking the  concept of table-top, MUDs, and browser gaming, mixing it all together, and making something awesome ;)
-    %h1 Signup for the beta!
-    = form_for @betum do |f|
-      -if @betum.errors.any?
-        #error_explanation
-          Oops, there was an error...
-          - @betum.errors.full_messages.each do |msg|
-            = msg
-            %br
-      = f.label :email
-      = f.text_field :email
-      = f.submit 'Save'
+    %p Tales of Oakvale is a text based MMORPG which puts the players in control of the story line. We're basically taking the  concept of table-top, MUDs, and browser gaming, mixing it all together, and making something awesome ;)
+    #signup_form
+      %h1 Signup for the beta!
+      = form_for @betum, remote: true do |f|
+        #errors
+        -#-if @betum.errors.any?
+        -#  #error_explanation
+        -#    Oops, there was an error...
+        -#    - @betum.errors.full_messages.each do |msg|
+        -#      = msg
+        -#      %br
+        = f.label :email
+        #email_form= f.text_field :email
+        #beta_signup= f.submit 'Save'
