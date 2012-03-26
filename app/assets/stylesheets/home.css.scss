@@ -1,0 +1,23 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#wrapper { width: 960px; margin: 0px auto; }
+#signup { width: 384px; margin: 345px 0 0 545px; }
+#signup h1 { margin: 0px; font-family: Cambo, serif; color: #1e1103; font-size: 25px; font-weight: lighter; letter-spacing: -1px; font-smooth: always; -webkit-font-smoothing: antialiased; }
+#signup_header { padding-top: 10px; }
+#signup p { font-family: times, serif; color: #513617; font-size: 15px; margin-top: 10px; line-height: 19px; }
+#signup .field { width: 200px; }
+#signup .field input { border: none; border-radius: 4px; width: 100%; height: 30px; padding-left: 13px; font: italic 16px georgia, serif; color: #000; }
+#signup .field label { font-size: 12px; margin: 8px 0 7px; display: block; color: #826D52; }
+#signup .actions { float: right; }
+#signup .actions input { border: none; background: url('https://s3.amazonaws.com/oakvale-images/assets/signup.jpg'); width: 160px; height: 75px; margin-top: -53px; float: left; cursor: pointer; }
+
+#gallery { clear: both; float: left; margin-left: 11px; }
+.gallery_thumb { float: left; width: 123px; height: 80px; background: url('https://s3.amazonaws.com/oakvale-images/assets/progress.jpg'); margin: 163px 40px 0 0; }
+#gallery_2 { background-position: 0 -80px; }
+#gallery_3 { background-position: 0 -160px; }
+#gallery_4 { background-position: 0 -240px; }
+#gallery_5 { background-position: 0 -320px; }
+#gallery_6 { background-position: 0 -400px; }
+.gallery_last { margin-right: 0px; }

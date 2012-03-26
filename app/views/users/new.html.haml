@@ -1,0 +1,37 @@
+= content_for :head do
+    = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Cambo'
+    = stylesheet_link_tag 'colorbox'
+
+%script
+    $(document).ready(function(){$(".gallery_thumb").colorbox();});
+
+-if flash[:notice]
+    .form_notice
+        %ul
+            %li
+                = flash[:notice]
+
+-if @user.errors.any?
+    .form_notice.error
+        %ul
+            - @user.errors.full_messages.each do |msg|
+                %li= msg
+#wrapper
+    #signup
+        %h1 What is Tales of Oakvale?
+        %p
+            Tales of Oakvale is a text based MMORPG which puts the players in control of the story line. We're basically taking the concept of table-top, MUDs, and browser gaming, mixing it all together, and creating something awesome ;)
+        %h1#signup_header Signup for the beta!
+        = form_for @user do |f|  
+            .field
+                = f.label :email, 'We just need your Email Address'
+                = f.text_field :email
+            .actions
+                = f.submit ""
+    #gallery
+        %a.gallery_thumb#gallery_1{ :rel=>"gal", :href => 'https://s3.amazonaws.com/oakvale-images/assets/map.jpg' }
+        %a.gallery_thumb#gallery_2{ :rel=>"gal", :href => 'https://s3.amazonaws.com/oakvale-images/assets/armor_4.jpg'}
+        %a.gallery_thumb#gallery_3{ :rel=>"gal", :href => 'https://s3.amazonaws.com/oakvale-images/assets/armor_3.jpg'}
+        %a.gallery_thumb#gallery_4{ :rel=>"gal", :href => 'https://s3.amazonaws.com/oakvale-images/assets/armor_2.jpg'}
+        %a.gallery_thumb#gallery_5{ :rel=>"gal", :href => 'https://s3.amazonaws.com/oakvale-images/assets/armor_1.jpg' }
+        %a.gallery_thumb.gallery_last#gallery_6{ :rel=>"gal", :href => 'https://s3.amazonaws.com/oakvale-images/assets/book.jpg'}

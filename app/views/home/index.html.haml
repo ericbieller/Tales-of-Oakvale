@@ -1,0 +1,19 @@
+= stylesheet_link_tag 'css/common'
+= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Cambo'
+
+#wrapper
+    #signup
+        %h1 What is Tales of Oakvale?
+        %p
+            Tales of Oakvale is a text based MMORPG which puts the players in control of the story line. We're basically taking the  concept of table-top, MUDs, and browser gaming, mixing it all together, and making something awesome ;)
+        %h1 Signup for the beta!
+        = form_tag('/', :method => "post") do
+            -if @beta.errors.any?
+                #error_explanation
+                    %h2= "#{pluralize(@beta.errors.count, "error")} prohibited this post from being saved:"
+                    %ul
+                        - @beta.errors.full_messages.each do |msg|
+                            %li= msg
+            = label_tag(:q, "Email address")
+            = text_field_tag(:email)
+            = submit_tag("Sign up!")
