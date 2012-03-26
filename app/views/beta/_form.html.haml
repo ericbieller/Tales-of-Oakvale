@@ -1,10 +1,11 @@
 = form_for @betum do |f|
   -if @betum.errors.any?
     #error_explanation
-      %h2= "#{pluralize(@betum.errors.count, "error")} prohibited this betum from being saved:"
-      %ul
-        - @betum.errors.full_messages.each do |msg|
-          %li= msg
+      oops, we had some errors:
+      %br
+      - @betum.errors.full_messages.each do |msg|
+        = msg
+        %br
 
   .field
     = f.label :email
