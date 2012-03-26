@@ -1,4 +1,8 @@
 Oakvale::Application.routes.draw do
+  resources :beta
+
+  match '/', to: 'beta#new'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
