@@ -54,7 +54,7 @@ class BetaController < ApplicationController
     else
       respond_with( @betum.errors, :status => :unprocessable_entity ) do |format|
         format.html do
-          if request.xhr? then render partial: "new_form" else render action: :new end
+          if request.xhr? then render partial: "layouts/error", locals: {object: @betum} else render action: :new end
         end
       end
     end

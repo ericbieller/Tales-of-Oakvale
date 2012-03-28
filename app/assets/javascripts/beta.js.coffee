@@ -4,12 +4,16 @@
 
 $(document).ready ->
   $('#signup_form form').submit (event) ->
-    $.ajax this.action,
+    $.ajax '/beta',
       type: 'POST'
       data: $(this).serialize()
       dataType: 'html'
       success: (response) ->
-        $('#signup_form').html(response)
+        $('.error').html(response)
+#        $('#signup_form').html(response)
+#        $('.error').html(response)
+        $('.error').slideDown("fast")
+
     return false
 
 #    whole_form = $(this).parent()
