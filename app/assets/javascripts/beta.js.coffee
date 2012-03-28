@@ -8,10 +8,14 @@ $(document).ready ->
     event.preventDefault()
     whole_form = $(this).parent()
     email = $('#betum_email').val()
+    errors = $('.error ul')
+    notice = $('.form_notice')
     if !email
-      $('#errors').text('We need an email address...')
+      errors.html('<li>We need an email address...</li>')
+      $('.error').slideDown("fast")
     else if !/^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i.test(email)
-      $('#errors').text("That doesn't look quite right...")
+      errors.html("<li>That doesn't look quite right...</li>")
     else
-      whole_form.hide('slow')
-      whole_form.after('Thanks!  We will send you updates at ' + email + ' as we get closer to making your stories possible.')
+      notice.html('Thanks!  We will send you updates at ' + email + ' as we get closer to making your stories possible.')
+      notice.removeClass('error')
+      notice.slideDown("fast")

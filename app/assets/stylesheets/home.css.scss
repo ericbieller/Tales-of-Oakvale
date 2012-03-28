@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#wrapper { width: 960px; margin: 0px auto; }
+#wrapper { width: 960px; margin: 0px auto; min-height: 700px; }
 #signup { width: 384px; margin: 345px 0 0 545px; }
 #signup h1 { margin: 0px; font-family: Cambo, serif; color: #1e1103; font-size: 25px; font-weight: lighter; letter-spacing: -1px; font-smooth: always; -webkit-font-smoothing: antialiased; }
 #signup_header { padding-top: 10px; }
@@ -14,7 +14,7 @@
 #signup .actions input { border: none; background: url('https://s3.amazonaws.com/oakvale-images/assets/signup.jpg'); width: 160px; height: 75px; margin-top: -53px; float: left; cursor: pointer; }
 
 #gallery { clear: both; float: left; margin-left: 11px; }
-.gallery_thumb { float: left; width: 123px; height: 80px; background: url('https://s3.amazonaws.com/oakvale-images/assets/progress.jpg'); margin: 163px 40px 0 0; }
+.gallery_thumb { float: left; width: 123px; height: 80px; background: url('https://s3.amazonaws.com/oakvale-images/assets/progress.jpg'); margin: 193px 40px 0 0; }
 #gallery_2 { background-position: 0 -80px; }
 #gallery_3 { background-position: 0 -160px; }
 #gallery_4 { background-position: 0 -240px; }
