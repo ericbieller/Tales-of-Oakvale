@@ -1,0 +1,7 @@
+.form_notice.error
+  %ul
+    -if @betum.errors.count > 1
+      %li We need an email address
+    -else
+      - @betum.errors.full_messages.each do |msg|
+        %li= msg

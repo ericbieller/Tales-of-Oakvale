@@ -1,7 +1,5 @@
 %h1 Signup for the beta!
 = form_for @betum, remote: true do |f|
-  #errors=render 'layouts/error', object: @betum
-  -#This error looks ugly right now.  I leave the styling to you (it currently breaks the gallery bc it's too big).
   = f.label :email
   #email_form= f.text_field :email
   #beta_signup= f.submit 'Save'

@@ -48,13 +48,13 @@ class BetaController < ApplicationController
     if @betum.save
       respond_with( @betum, :status => :created) do |format|
         format.html do
-          if request.xhr? then render partial: "beta/success" else render action: :show end
+          if request.xhr? then render partial: "beta/success" else render action: :new end
         end
       end
     else
       respond_with( @betum.errors, :status => :unprocessable_entity ) do |format|
         format.html do
-          if request.xhr? then render partial: "layouts/error", locals: {object: @betum} else render action: :new end
+          if request.xhr? then render partial: "beta/beta_error" else render action: :new end
         end
       end
     end

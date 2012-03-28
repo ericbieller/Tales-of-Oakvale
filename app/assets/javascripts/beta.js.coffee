@@ -9,24 +9,7 @@ $(document).ready ->
       data: $(this).serialize()
       dataType: 'html'
       success: (response) ->
-        $('.error').html(response)
+        $('#javascript_response').html(response)
 #        $('#signup_form').html(response)
-#        $('.error').html(response)
-        $('.error').slideDown("fast")
 
     return false
-
-#    whole_form = $(this).parent()
-#    email = $('#betum_email').val()
-#    errors = $('.error ul')
-#    notice = $('.form_notice')
-#    if !email
-#      errors.html('<li>We need an email address...</li>')
-#      $('.error').slideDown("fast")
-#    else if !/^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i.test(email)
-#      errors.html("<li>That doesn't look quite right...</li>")
-#      $('.error').slideDown("fast")
-#    else
-#      notice.html('Thanks!  We will send you updates at ' + email + ' as we get closer to making your stories possible.')
-#      notice.removeClass('error')
-#      notice.slideDown("fast")
