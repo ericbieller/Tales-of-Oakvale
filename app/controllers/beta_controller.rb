@@ -1,4 +1,6 @@
 class BetaController < ApplicationController
+  respond_to :html, :xml, :json
+
   # GET /beta
   # GET /beta.json
   def index
@@ -43,14 +45,17 @@ class BetaController < ApplicationController
   def create
     @betum = Betum.new(params[:betum])
 
-    respond_to do |format|
-      if @betum.save
-        format.html { redirect_to @betum, notice: 'Betum was successfully created.' }
-        format.json { render json: @betum, status: :created, location: @betum }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @betum.errors, status: :unprocessable_entity }
-        format.js
+    if @betum.save
+      respond_with( @betum, :status => :created) do |format|
+        format.html do
+          if request.xhr? then render partial: "beta/success" else render action: :show end
+        end
+      end
+    else
+      respond_with( @betum.errors, :status => :unprocessable_entity ) do |format|
+        format.html do
+          if request.xhr? then render partial: "new_form" else render action: :new end
+        end
       end
     end
   end
