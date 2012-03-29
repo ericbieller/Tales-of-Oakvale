@@ -1,5 +1,5 @@
 body { margin: 0px; background: #000 url('https://s3.amazonaws.com/oakvale-images/assets/betabg.jpg') no-repeat; background-position: top center; }
 
-.form_notice { background: #00a6d6; position: absolute; top: 0; left: 0; width: 100%; font-family: Georgia, sans-serif; margin: 0px; text-align: center; padding: 5px 0 5px 0; color: #fff; text-shadow: 1px 1px 0px #000; box-shadow: 2px 2px 5px #000; }
+.form_notice { background: #00a6d6; top: 0; left: 0; width: 100%; font-family: Georgia, sans-serif; margin: 0px; text-align: center; padding: 5px 0 5px 0; color: #fff; text-shadow: 1px 1px 0px #000; border-radius: 4px; }
 .form_notice ul { list-style: none; margin: 0px; padding: 0px; }
-.error { display: none; background: #991414; }
+.error { float: left; background: #991414; }

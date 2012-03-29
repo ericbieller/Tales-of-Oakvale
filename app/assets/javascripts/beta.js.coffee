@@ -10,6 +10,4 @@ $(document).ready ->
       dataType: 'html'
       success: (response) ->
         $('#javascript_response').html(response)
-#        $('#signup_form').html(response)
-
     return false

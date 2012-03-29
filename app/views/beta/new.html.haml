@@ -10,20 +10,20 @@
       %li
         = flash[:notice]
 
-%style{:type => "text/css"}
-  == .form_notice { display: block};
--if @betum.errors.any?
-  .form_notice.error
-    =render 'beta/beta_error'
--elsif @betum.email
-  .form_notice
-    = render 'beta/success'
-#javascript_response
-
 #wrapper
+  %a#kickstarter{:href => "http://www.kickstarter.com"}
+  #video
+    <iframe src="http://player.vimeo.com/video/6177960?title=0&amp;byline=0&amp;portrait=0" width="453" height="260" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
   #signup
     %h1 What is Tales of Oakvale?
     %p Tales of Oakvale is a text based MMORPG which puts the players in control of the story line. We're basically taking the concept of table-top, MUDs, and browser gaming, mixing it all together, and making something awesome ;)
+    -if @betum.errors.any?
+      .form_notice.error
+        =render 'beta/beta_error'
+    -elsif @betum.email
+      .form_notice
+        = render 'beta/success'
+    #javascript_response
     -unless @betum.email && !@betum.errors.any?
       #signup_form
         =render 'beta/new_form'
