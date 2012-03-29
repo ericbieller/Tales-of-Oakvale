@@ -12,7 +12,7 @@ $(document).ready ->
       dataType: 'json'
       success: (json, status) ->
         if json.created
-          $('#signup_form').text("Thanks.")
+          $('#signup_form').text("")
           $('#javascript_response').html(json.html)
         else
           $('#javascript_response').html(json.html)
