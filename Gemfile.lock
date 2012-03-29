@@ -127,6 +127,7 @@ DEPENDENCIES
   haml
   haml-rails
   jquery-rails
+  json
   pg
   rails (= 3.2.2)
   sass-rails (~> 3.2.3)

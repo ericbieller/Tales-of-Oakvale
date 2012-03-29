@@ -14,10 +14,10 @@
   == .form_notice { display: block};
 -if @betum.errors.any?
   .form_notice.error
-    =render 'beta/beta_error'
+    =render 'beta/beta_error', beta: @betum
 -elsif @betum.email
   .form_notice
-    = render 'beta/success'
+    = render 'beta/success', beta: @betum
 #javascript_response
 
 #wrapper

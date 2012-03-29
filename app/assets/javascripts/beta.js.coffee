@@ -4,12 +4,17 @@
 
 $(document).ready ->
   $('#signup_form form').submit (event) ->
-    $.ajax '/beta',
+    event.preventDefault()
+    $.ajax
       type: 'POST'
+      url: $(this).attr('action')
       data: $(this).serialize()
-      dataType: 'html'
-      success: (response) ->
-        $('#javascript_response').html(response)
-#        $('#signup_form').html(response)
+      dataType: 'json'
+      success: (json, status) ->
+        if json.created
+          $('#signup_form').text("Thanks.")
+          $('#javascript_response').html(json.html)
+        else
+          $('#javascript_response').html(json.html)
 
     return false
