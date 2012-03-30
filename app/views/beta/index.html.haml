@@ -4,14 +4,10 @@
       %tr
         %th Email
         %th
-        %th
-        %th
 
       - @beta.each do |betum|
         %tr
           %td= betum.email
-          %td= link_to 'Show', betum
-          %td= link_to 'Edit', edit_betum_path(betum)
           %td= link_to 'Destroy', betum, :confirm => 'Are you sure?', :method => :delete
 
     %br

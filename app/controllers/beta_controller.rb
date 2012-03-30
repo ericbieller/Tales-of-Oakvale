@@ -1,44 +1,10 @@
 class BetaController < ApplicationController
   respond_to :html, :xml, :json
-
-  # GET /beta
-  # GET /beta.json
-  def index
-    @beta = Betum.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @beta }
-    end
+  http_basic_authenticate_with name: 'us', :password => "taffyninja", only: [:show, :index]
+  make_resourceful do
+    actions :index, :show, :new, :destroy
   end
 
-  # GET /beta/1
-  # GET /beta/1.json
-  def show
-    @betum = Betum.find(params[:id])
-      respond_with(@betum)
-  end
-
-  # GET /beta/new
-  # GET /beta/new.json
-  def new
-    @betum = Betum.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @betum }
-      format.js
-    end
-  end
-
-  # GET /beta/1/edit
-  def edit
-    @betum = Betum.find(params[:id])
-    respond_with(@betum, location: beta_url)
-  end
-
-  # POST /beta
-  # POST /beta.json
   def create
     @betum = Betum.new(params[:betum])
     if @betum.save
@@ -46,57 +12,13 @@ class BetaController < ApplicationController
         format.html { render action: :new, notice: 'Thanks for signing up!' }
         format.json {render json: {beta: @betum, created: true, html: render_to_string(partial: '/beta/success',
                                                                          layout: false, locals: {beta: @betum})}}
-        format.js
       end
     else
       respond_to do |format|
         format.html {render action: :new}
         format.json {render json: {beta: @betum, created: false, html: render_to_string(partial: "beta/beta_error",
-                                                                          layout: false, locals: {:beta => @betum})}}
-        format.js
+                                                                          layout: false, locals: {beta: @betum})}}
       end
-    end
-    #
-    #if @betum.save
-    #  respond_with( @betum, :status => :created) do |format|
-    #    format.html do
-    #      if request.xhr? then render partial: "beta/success" else render action: :new end
-    #    end
-    #  end
-    #else
-    #  respond_with( @betum.errors, :status => :unprocessable_entity ) do |format|
-    #    format.html do
-    #      if request.xhr? then render partial: "beta/beta_error" else render action: :new end
-    #    end
-    #  end
-    #end
-  end
-
-  # PUT /beta/1
-  # PUT /beta/1.json
-  def update
-    @betum = Betum.find(params[:id])
-
-    respond_to do |format|
-      if @betum.update_attributes(params[:betum])
-        format.html { redirect_to @betum, notice: 'Betum was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @betum.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /beta/1
-  # DELETE /beta/1.json
-  def destroy
-    @betum = Betum.find(params[:id])
-    @betum.destroy
-
-    respond_to do |format|
-      format.html { redirect_to beta_url }
-      format.json { head :no_content }
     end
   end
 end
