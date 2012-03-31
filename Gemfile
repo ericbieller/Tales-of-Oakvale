@@ -13,6 +13,14 @@ gem 'therubyracer'
 gem 'simple_form'
 gem 'make_resourceful'
 
+group :test do
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'launchy'
+end
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

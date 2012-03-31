@@ -1,6 +1,7 @@
 class BetaController < ApplicationController
   respond_to :html, :xml, :json
   http_basic_authenticate_with name: 'us', :password => "taffyninja", only: [:show, :index]
+
   make_resourceful do
     actions :index, :show, :new, :destroy
   end
