@@ -1,4 +1,10 @@
 class Betum < ActiveRecord::Base
+  #after_create :deliver_signup_notification
+
+  def deliver_signup_notification
+    UserMailer.deliver_beta_signup(self)
+  end
+
   attr_accessible :email
   validates :email,
             :presence => true,

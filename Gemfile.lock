@@ -170,6 +170,7 @@ DEPENDENCIES
   jquery-rails
   json
   launchy
+  mail
   make_resourceful
   pg
   rails (= 3.2.2)

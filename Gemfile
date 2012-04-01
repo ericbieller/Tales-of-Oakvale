@@ -12,6 +12,7 @@ gem 'execjs'
 gem 'therubyracer'
 gem 'simple_form'
 gem 'make_resourceful'
+gem 'mail'
 
 group :test do
   gem 'rspec-rails'
