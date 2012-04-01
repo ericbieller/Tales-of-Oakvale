@@ -1,8 +1,8 @@
 class Betum < ActiveRecord::Base
-  #after_create :deliver_signup_notification
+  after_create :deliver_signup_notification
 
   def deliver_signup_notification
-    UserMailer.deliver_beta_signup(self)
+    UserMailer.beta_signup(self).deliver
   end
 
   attr_accessible :email
